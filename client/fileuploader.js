@@ -344,7 +344,7 @@ qq.FileUploaderBasic.prototype = {
 			this._filesInProgress++;
 			var params = this._options.params;
 			if (typeof params === 'function') {
-				params = params();
+				params = params(this._storedFiles[i]);
 			} 
 			this._handler.upload(this._storedFiles[i], params);
 		}
